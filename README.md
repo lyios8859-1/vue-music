@@ -1,4 +1,4 @@
-# vue-cli
+# vue-cli-music
 
 ## Project setup
 
@@ -29,7 +29,3 @@ npm run test
 ```shell
 npm run lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
