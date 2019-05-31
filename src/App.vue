@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <music-header />
-    <music-title />
+    <music-tab />
     <router-view />
   </div>
 </template>
 
 <script>
 import MusicHeader from "./components/m-header/music-header.vue";
-import MusicTitle from "./components/m-title/music-title.vue";
+import MusicTab from "./components/m-tab/music-tab.vue";
 
 export default {
   name: "app",
   components: {
     MusicHeader,
-    MusicTitle
+    MusicTab
   }
 };
 </script>

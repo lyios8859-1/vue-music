@@ -6,12 +6,18 @@ import Recommend from "../components/m-recommend/music-recommend.vue";
 import Singer from "../components/m-singer/music-singer.vue";
 import Rank from "../components/m-rank/music-rank.vue";
 import Search from "../components/m-search/music-search.vue";
+
 // eslint-disable-next-line
 export default new Router({
   mode: "history",
+  // li
   routes: [
     {
       path: "/",
+      redirect: "/recommend"
+    },
+    {
+      path: "/recommend",
       component: Recommend
     },
     {
