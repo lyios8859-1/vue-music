@@ -26,7 +26,7 @@
 </template>
 
 <style lang="stylus" scope>
-@import '../../common/style/index.styl';
+@import '../../common/style/variable.styl';
 
 section.m-tab {
   width: 100%;
