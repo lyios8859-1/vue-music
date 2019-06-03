@@ -100,6 +100,9 @@ export default {
   },
   mounted() {
     const _self = this;
+    if (_self.banner) {
+      _self.banner.destroy();
+    }
     _self.$nextTick(() => {
       _self._setBannerWidth();
       _self._initDots();
@@ -108,9 +111,16 @@ export default {
         _self._autoPlay();
       }
     });
+    window.addEventListener("resize", () => {
+      if (!_self.banner) {
+        return;
+      }
+      _self._setBannerWidth(true);
+      _self.banner.refresh();
+    });
   },
   methods: {
-    _setBannerWidth() {
+    _setBannerWidth(isResize) {
       const _self = this;
       _self.children = _self.$refs.refBannerGroup.children;
       let width = 0;
@@ -121,7 +131,7 @@ export default {
         child.style.width = bannerParentContainerWidth + "px";
         width += bannerParentContainerWidth;
       }
-      if (this.loop) {
+      if (_self.loop && !isResize) {
         width += 2 * bannerParentContainerWidth;
       }
       _self.$refs.refBannerGroup.style.width = width + "px";
